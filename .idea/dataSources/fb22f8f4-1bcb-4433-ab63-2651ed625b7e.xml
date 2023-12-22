@@ -166,11 +166,14 @@
     <collation id="159" parent="2" name="VIETNAMESE"/>
     <collation id="160" parent="2" name="VIETNAMESE_VIETNAM"/>
     <role id="161" parent="2" name="PUBLIC"/>
-    <schema id="162" parent="2" name="INFORMATION_SCHEMA"/>
+    <schema id="162" parent="2" name="INFORMATION_SCHEMA">
+      <IntrospectionTimestamp>2023-12-22.09:59:58.920</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-12-22.08:59:58</LocalIntrospectionTimestamp>
+    </schema>
     <schema id="163" parent="2" name="PUBLIC">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-12-22.09:50:26.429</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-12-22.08:50:26</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-12-22.09:59:58.928</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-12-22.08:59:58</LocalIntrospectionTimestamp>
     </schema>
     <user id="164" parent="2" name="ADMIN">
       <Admin>1</Admin>
