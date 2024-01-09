@@ -167,17 +167,17 @@
     <collation id="160" parent="2" name="VIETNAMESE_VIETNAM"/>
     <role id="161" parent="2" name="PUBLIC"/>
     <schema id="162" parent="2" name="FLOWERSHOP">
-      <IntrospectionTimestamp>2024-01-09.10:26:16.334</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-01-09.09:26:16</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2024-01-09.12:27:00.398</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-01-09.11:27:00</LocalIntrospectionTimestamp>
     </schema>
     <schema id="163" parent="2" name="INFORMATION_SCHEMA">
-      <IntrospectionTimestamp>2024-01-09.10:26:16.341</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-01-09.09:26:16</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2024-01-09.12:27:00.409</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-01-09.11:27:00</LocalIntrospectionTimestamp>
     </schema>
     <schema id="164" parent="2" name="PUBLIC">
       <Current>1</Current>
-      <IntrospectionTimestamp>2024-01-09.10:26:16.343</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-01-09.09:26:16</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2024-01-09.12:27:00.437</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-01-09.11:27:00</LocalIntrospectionTimestamp>
     </schema>
     <user id="165" parent="2" name="ADMIN">
       <Admin>1</Admin>
@@ -332,7 +332,7 @@
       <Position>1</Position>
       <SequenceInline>1</SequenceInline>
       <SequenceDasType>INTEGER|0s</SequenceDasType>
-      <SequenceSequenceIdentity>1(1)</SequenceSequenceIdentity>
+      <SequenceSequenceIdentity>1(2)</SequenceSequenceIdentity>
       <SequenceStartValue>1</SequenceStartValue>
     </column>
     <column id="227" parent="168" name="NAME">
@@ -452,7 +452,7 @@
       <Position>1</Position>
       <SequenceInline>1</SequenceInline>
       <SequenceDasType>INTEGER|0s</SequenceDasType>
-      <SequenceSequenceIdentity>1(1)</SequenceSequenceIdentity>
+      <SequenceSequenceIdentity>1(6)</SequenceSequenceIdentity>
       <SequenceStartValue>1</SequenceStartValue>
     </column>
     <column id="248" parent="170" name="HEIGHT">
