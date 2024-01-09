@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DdlMappings">
     <mapping uuid="b86bf1a3-c994-4462-a7aa-035334b67627" name="FlowerShop Mapping">
-      <data-sources db="a6883907-09cf-4536-b060-4f91a92e902b" ddl="ccd13fbf-b599-4177-91f5-fc668afa9d2f" />
+      <data-sources db="9e7ccf46-bf86-47cb-9058-ab14b6fed661" ddl="5159bccb-a67a-43f1-afa0-4392c79e521c" />
       <scope>
         <node negative="1">
           <node kind="database" negative="1" />
@@ -12,13 +12,19 @@
         </node>
       </scope>
     </mapping>
+    <mapping uuid="ed0d61dd-e95d-414c-a815-a403f17779c8" name="DDL data source Mapping">
+      <data-sources db="9e7ccf46-bf86-47cb-9058-ab14b6fed661" ddl="5159bccb-a67a-43f1-afa0-4392c79e521c" />
+      <scope>
+        <node kind="database" qname="FLOWERSHOP" />
+      </scope>
+    </mapping>
   </component>
   <component name="SqlDataSourceStorage">
     <option name="dataSources">
       <list>
         <State>
-          <option name="id" value="ccd13fbf-b599-4177-91f5-fc668afa9d2f" />
-          <option name="name" value="FlowerShop (DDL)" />
+          <option name="id" value="5159bccb-a67a-43f1-afa0-4392c79e521c" />
+          <option name="name" value="DDL data source" />
           <option name="dbmsName" value="H2" />
           <option name="urls">
             <array>
