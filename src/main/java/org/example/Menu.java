@@ -1,6 +1,8 @@
 package org.example;
 
 
+import java.sql.Connection;
+
 public class Menu {
 
     public static byte showMenu() {
@@ -33,57 +35,57 @@ public class Menu {
         return option;
     }
 
-    public static void choseMenu(){
+    public static void choseMenu(Connection con){
         boolean exit = false;
         do {
             switch (showMenu()) {
                 case 1:
                     System.out.println("Menu 1 - Add Tree.");
-                    Methods.createTree();
+                    Methods.createTree(con);
                     break;
                 case 2:
                     System.out.println("Menu 2 - Add Flower.");
-                    Methods.createFlower();
+                    Methods.createFlower(con);
                     break;
                 case 3:
                     System.out.println("Menu 3 - Add Decoration.");
-                    Methods.createDecoration();
+                    Methods.createDecoration(con);
                     break;
                 case 4:
                     System.out.println("Menu 4 - Stock: Print all Trees, Flowers and Decoration.");
-                    Methods.printStock();
+                    Methods.printStock(con);
                     break;
                 case 5:
                     System.out.println("Menu 5 - Remove a Tree item.");
-                    Methods.deleteProduct();
+                    Methods.deleteProduct(con);
                     break;
                 case 6:
                     System.out.println("Menu 6 - Remove a Flower item.");
-                    Methods.deleteProduct();
+                    Methods.deleteProduct(con);
                     break;
                 case 7:
                     System.out.println("Menu 7 - Remove a Decoration item.");
-                    Methods.deleteProduct();
+                    Methods.deleteProduct(con);
                     break;
                 case 8:
                     System.out.println("Menu 8 - Print stock with quantities.");
-                    Methods.printProductCount();
+                    Methods.printProductCount(con);
                     break;
                 case 9:
                     System.out.println("Menu 9 - Print stock total value.");
-                    Methods.stockTotalValue();
+                    Methods.stockTotalValue(con);
                     break;
                 case 10:
                     System.out.println("Menu 10 - Create a ticket with the total items.");
-                    Methods.createTicketMethod();
+                    Methods.createTicketMethod(con);
                     break;
                 case 11:
                     System.out.println("Menu 11 - Show old purchases.");
-                    Methods.showOldPurchases();
+                    Methods.showOldPurchases(con);
                     break;
                 case 12:
                     System.out.println("Menu 12 - View the total money earned from all sales.");
-                    Methods.showTotalEarnings();
+                    Methods.showTotalEarnings(con);
                     break;
                 case 13:
                     System.out.println("Menu 13 - Restart DataBase.");
@@ -103,13 +105,13 @@ public class Menu {
         return menuOption;
     }
 
-    public static void chooseMenuTicket(){
+    public static void chooseMenuTicket(Connection con){
         boolean exit = false;
         do {
             int menu = menuTicket();
             switch (menu){
                 case 1:
-                    Methods.addProductTicket();
+                    Methods.addProductTicket(con);
                     break;
                 case 0:
                     exit = true;
