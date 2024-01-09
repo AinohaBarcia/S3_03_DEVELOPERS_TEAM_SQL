@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS FlowerShop.FlowerShop
 CREATE TABLE IF NOT EXISTS FlowerShop.Flowers
 (
     idFlowers                      INT AUTO_INCREMENT PRIMARY KEY,
+    name                           VARCHAR(50) NOT NULL,
     color                          VARCHAR(45) NOT NULL,
     price                          FLOAT       NOT NULL,
     FlowerShop_idFlowerShop        INT         NOT NULL,
@@ -29,6 +30,7 @@ CREATE TABLE IF NOT EXISTS FlowerShop.Flowers
 CREATE TABLE IF NOT EXISTS FlowerShop.Tree
 (
     idTree                         INT AUTO_INCREMENT PRIMARY KEY,
+    name                           VARCHAR(50) NOT NULL,
     height                         SMALLINT NOT NULL,
     price                          FLOAT    NOT NULL,
     FlowerShop_idFlowerShop        INT      NOT NULL,
@@ -45,6 +47,7 @@ CREATE TABLE IF NOT EXISTS FlowerShop.Tree
 CREATE TABLE IF NOT EXISTS FlowerShop.Decoration
 (
     idDecoration                   INT PRIMARY KEY,
+    name                           VARCHAR(50) NOT NULL,
     type                           VARCHAR(255) NOT NULL,
     price                          FLOAT        NOT NULL,
     FlowerShop_idFlowerShop        INT          NOT NULL,

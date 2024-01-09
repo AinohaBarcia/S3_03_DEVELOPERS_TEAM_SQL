@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-232.10227.8">
-    <data-source name="FlowerShop" uuid="9e7ccf46-bf86-47cb-9058-ab14b6fed661">
+    <data-source name="FlowerShop" uuid="afeed79f-3354-478e-9ec0-919fdc9b1f45">
       <database-info product="H2" version="2.2.224 (2023-09-17)" jdbc-version="4.2" driver-name="H2 JDBC Driver" driver-version="2.2.224 (2023-09-17)" dbms="H2" exact-version="2.2.224" exact-driver-version="2.2">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
@@ -11,14 +11,11 @@
       <schema-mapping>
         <introspection-scope>
           <node negative="1">
-            <node kind="database" qname="FLOWERSHOP" negative="1">
+            <node kind="database" negative="1">
               <node kind="schema" negative="1" />
             </node>
-            <node kind="database" qname="FLOWERSHOP">
-              <node kind="schema" negative="1">
-                <name qname="FLOWERSHOP" />
-                <name qname="INFORMATION_SCHEMA" />
-              </node>
+            <node kind="database" qname="@">
+              <node kind="schema" qname="@" />
             </node>
           </node>
         </introspection-scope>

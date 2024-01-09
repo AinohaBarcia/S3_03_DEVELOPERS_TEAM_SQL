@@ -167,17 +167,17 @@
     <collation id="160" parent="2" name="VIETNAMESE_VIETNAM"/>
     <role id="161" parent="2" name="PUBLIC"/>
     <schema id="162" parent="2" name="FLOWERSHOP">
-      <IntrospectionTimestamp>2024-01-09.10:03:29.345</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-01-09.09:03:29</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2024-01-09.12:29:59.356</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-01-09.11:29:59</LocalIntrospectionTimestamp>
     </schema>
     <schema id="163" parent="2" name="INFORMATION_SCHEMA">
-      <IntrospectionTimestamp>2024-01-09.10:03:29.360</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-01-09.09:03:29</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2024-01-09.12:29:59.370</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-01-09.11:29:59</LocalIntrospectionTimestamp>
     </schema>
     <schema id="164" parent="2" name="PUBLIC">
       <Current>1</Current>
-      <IntrospectionTimestamp>2024-01-09.10:03:29.399</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-01-09.09:03:29</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2024-01-09.12:29:59.381</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-01-09.11:29:59</LocalIntrospectionTimestamp>
     </schema>
     <user id="165" parent="2" name="ADMIN">
       <Admin>1</Admin>
@@ -244,12 +244,10 @@
     </column>
     <column id="210" parent="166" name="TICKET_IDTICKET">
       <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="211" parent="166" name="TICKET_FLOWERSHOP_IDFLOWERSHOP">
       <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <foreign-key id="212" parent="166" name="FK_DECORATION_FLOWERSHOP1">
@@ -300,12 +298,10 @@
     </column>
     <column id="220" parent="167" name="TICKET_IDTICKET">
       <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="221" parent="167" name="TICKET_FLOWERSHOP_IDFLOWERSHOP">
       <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <foreign-key id="222" parent="167" name="FK_FLOWERS_FLOWERSHOP1">
@@ -336,7 +332,7 @@
       <Position>1</Position>
       <SequenceInline>1</SequenceInline>
       <SequenceDasType>INTEGER|0s</SequenceDasType>
-      <SequenceSequenceIdentity>1(1)</SequenceSequenceIdentity>
+      <SequenceSequenceIdentity>1(2)</SequenceSequenceIdentity>
       <SequenceStartValue>1</SequenceStartValue>
     </column>
     <column id="227" parent="168" name="NAME">
@@ -456,7 +452,7 @@
       <Position>1</Position>
       <SequenceInline>1</SequenceInline>
       <SequenceDasType>INTEGER|0s</SequenceDasType>
-      <SequenceSequenceIdentity>1(5)</SequenceSequenceIdentity>
+      <SequenceSequenceIdentity>1(6)</SequenceSequenceIdentity>
       <SequenceStartValue>1</SequenceStartValue>
     </column>
     <column id="248" parent="170" name="HEIGHT">
@@ -476,12 +472,10 @@
     </column>
     <column id="251" parent="170" name="TICKET_IDTICKET">
       <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="252" parent="170" name="TICKET_FLOWERSHOP_IDFLOWERSHOP">
       <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <foreign-key id="253" parent="170" name="FK_TREE_FLOWERSHOP1">
