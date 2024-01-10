@@ -8,6 +8,7 @@ public class Main {
         Connection con = DriverManager.
                 getConnection("jdbc:h2:./src/Db/FlowerShop", "Admin", "");
         // add application code here
+        Methods.printStock(con);
         Methods.createNewFlowerShop(con);
         Methods.createTree(con);
         con.close();
