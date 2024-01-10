@@ -13,6 +13,7 @@ public class Menu {
 
         do {
             System.out.println("Application menu: \r\n"
+                    + "0. Add FlowerShop. \r\n"
                     + "1. Add Tree. \r\n"
                     + "2. Add Flower.\r\n"
                     + "3. Add Decoration. \r\n"
@@ -41,11 +42,11 @@ public class Menu {
             switch (showMenu()) {
                 case 1:
                     System.out.println("Menu 1 - Add Tree.");
-                    Methods.createTree(con);
+                    Methods.createTree(con,Methods.searchFlowerShop(con));
                     break;
                 case 2:
                     System.out.println("Menu 2 - Add Flower.");
-                    Methods.createFlower(con);
+                    Methods.createFlower(con,Methods.searchFlowerShop(con));
                     break;
                 case 3:
                     System.out.println("Menu 3 - Add Decoration.");
