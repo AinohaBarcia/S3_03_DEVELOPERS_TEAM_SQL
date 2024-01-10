@@ -275,3 +275,39 @@ SELECT * FROM FLOWERSHOP.FLOWERSHOP [90001-224]
 	at org.example.Methods.searchFlowerShop(Methods.java:79)
 	at org.example.Menu.choseMenu(Menu.java:52)
 	at org.example.Main.main(Main.java:11)
+2024-01-10 12:47:46.893278+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Metodo no permitido en un query. Use execute ó executeQuery en lugar de executeUpdate
+Method is not allowed for a query. Use execute or executeQuery instead of executeUpdate; SQL statement:
+SELECT * FROM FLOWERSHOP.FLOWERSHOP [90001-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.Prepared.update(Prepared.java:244)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:216)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:174)
+	at org.example.Methods.query(Methods.java:90)
+	at org.example.Methods.searchFlowerShop(Methods.java:79)
+	at org.example.Menu.choseMenu(Menu.java:52)
+	at org.example.Main.main(Main.java:11)
+2024-01-10 12:59:25.452573+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Metodo no permitido en un query. Use execute ó executeQuery en lugar de executeUpdate
+Method is not allowed for a query. Use execute or executeQuery instead of executeUpdate; SQL statement:
+SELECT * FROM FLOWERSHOP.FLOWERSHOP [90001-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.Prepared.update(Prepared.java:244)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:216)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:174)
+	at org.example.Methods.query(Methods.java:90)
+	at org.example.Methods.searchFlowerShop(Methods.java:79)
+	at org.example.Menu.choseMenu(Menu.java:52)
+	at org.example.Main.main(Main.java:11)
