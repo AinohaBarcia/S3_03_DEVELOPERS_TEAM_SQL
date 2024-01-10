@@ -13,7 +13,7 @@
       </scope>
     </mapping>
     <mapping uuid="ed0d61dd-e95d-414c-a815-a403f17779c8" name="DDL data source Mapping">
-      <data-sources db="afeed79f-3354-478e-9ec0-919fdc9b1f45" ddl="177ed42d-b12e-4644-babe-3bf16ea75b59" />
+      <data-sources db="22343d5d-45bb-46c2-8c4f-8d0d50c722f9" ddl="9f60ce6d-0ddd-4c91-93bf-3bd4d2fa3063" />
       <scope>
         <node kind="database" qname="FLOWERSHOP" />
       </scope>
@@ -23,7 +23,7 @@
     <option name="dataSources">
       <list>
         <State>
-          <option name="id" value="177ed42d-b12e-4644-babe-3bf16ea75b59" />
+          <option name="id" value="9f60ce6d-0ddd-4c91-93bf-3bd4d2fa3063" />
           <option name="name" value="FlowerShop (DDL)" />
           <option name="dbmsName" value="H2" />
           <option name="urls">

@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS FlowerShop.Tree
 -- Table FlowerShop.Decoration
 CREATE TABLE IF NOT EXISTS FlowerShop.Decoration
 (
-    idDecoration                   INT PRIMARY KEY,
+    idDecoration                   INT AUTO_INCREMENT PRIMARY KEY,
     name                           VARCHAR(50) NOT NULL,
     type                           VARCHAR(255) NOT NULL,
     price                          FLOAT        NOT NULL,

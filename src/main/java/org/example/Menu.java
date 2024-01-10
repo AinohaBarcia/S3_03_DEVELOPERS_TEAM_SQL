@@ -49,7 +49,7 @@ public class Menu {
                     break;
                 case 3:
                     System.out.println("Menu 3 - Add Decoration.");
-                    Methods.createDecoration(con);
+                    Methods.createDecoration(con,Methods.searchFlowerShop(con));
                     break;
                 case 4:
                     System.out.println("Menu 4 - Stock: Print all Trees, Flowers and Decoration.");

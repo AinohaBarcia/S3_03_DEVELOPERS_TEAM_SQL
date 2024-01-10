@@ -16,15 +16,30 @@ public class Methods {
         query(con, sql);
     }
 
-    public static void createTree(Connection con) {
-        String sql = ("INSERT INTO FLOWERSHOP.TREE(HEIGHT,PRICE,FLOWERSHOP_IDFLOWERSHOP)VALUES(" + (Input.getInt("Height:")) + "," + (Input.getFloat("Price:")) + ",1);");
-        query(con, sql);
+    public static void createTree(Connection con){
+        String sql = ("INSERT INTO FLOWERSHOP.TREE(NAME,HEIGHT,PRICE,FLOWERSHOP_IDFLOWERSHOP)VALUES('"+(Input.getString("Name:"))+"',"+(Input.getInt("Height:"))+","+(Input.getFloat("Price:"))+",1);");
+        query(con,sql);
     }
 
     public static void createFlower(Connection con) {
     }
 
-    public static void createDecoration(Connection con) {
+
+
+    public static void createDecoration(Connection con,int idFlowerShop){
+        boolean result = false;
+        String typeDecoration = "";
+        do {
+            typeDecoration = Input.getString("Wood or plastic:").toUpperCase();
+            if (typeDecoration.contains("PLASTIC")){
+                result = true;
+            } else if (typeDecoration.contains("WOOD")){
+                result = true;
+            }
+        }while(!result);
+
+        String sql = ("INSERT INTO FLOWERSHOP.DECORATION(NAME,TYPE,PRICE,FLOWERSHOP_IDFLOWERSHOP)VALUES('"+(Input.getString("Name:"))+"','"+(typeDecoration)+"',"+(Input.getFloat("Price:"))+","+idFlowerShop+");");
+        query(con,sql);
     }
 
     public static void printStock(Connection con) {
@@ -59,6 +74,12 @@ public class Methods {
     public static void showTotalEarnings(Connection con) {
     }
 
+    public static int searchFlowerShop(Connection con){
+        String sql = "SELECT * FROM FLOWERSHOP.FLOWERSHOP;";
+        query(con, sql);
+        return Input.getInt("Id Flower Shop:");
+    }
+
     public static void searchProduct(Connection con) {
     }
 
@@ -66,9 +87,11 @@ public class Methods {
         ResultSet rs = null;
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.err.println("SQL Error: " + ex.getMessage());
         } catch (Exception ex) {
-            System.err.println("Error " + ex);
+            System.err.println("Error: " + ex);
         }
         return rs;
     }
