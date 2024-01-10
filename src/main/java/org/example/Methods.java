@@ -16,12 +16,14 @@ public class Methods {
         query(con, sql);
     }
 
-    public static void createTree(Connection con){
-        String sql = ("INSERT INTO FLOWERSHOP.TREE(NAME,HEIGHT,PRICE,FLOWERSHOP_IDFLOWERSHOP)VALUES('"+(Input.getString("Name:"))+"',"+(Input.getInt("Height:"))+","+(Input.getFloat("Price:"))+",1);");
+    public static void createTree(Connection con,int idFlowerShop){
+        String sql = ("INSERT INTO FLOWERSHOP.TREE(NAME,HEIGHT,PRICE,FLOWERSHOP_IDFLOWERSHOP)VALUES('"+(Input.getString("Name:"))+"',"+(Input.getInt("Height:"))+","+(Input.getFloat("Price:"))+"," +idFlowerShop+");");
         query(con,sql);
     }
 
-    public static void createFlower(Connection con) {
+    public static void createFlower(Connection con,int idFlowerShop) {
+        String sql = ("INSERT INTO FLOWERSHOP.FLOWER(NAME,COLOR,PRICE,FLOWERSHOP_IDFLOWERSHOP)VALUES('"+(Input.getString("Flower name:"))+"','"+(Input.getString("Color:"))+"',"+(Input.getFloat("Price:"))+"," +idFlowerShop+");");
+        query(con,sql);
     }
 
 
@@ -53,6 +55,13 @@ public class Methods {
     }
 
     public static void deleteProduct(Connection con) {
+        //Delete Flower
+        printEntries(con, "Flowers");
+        int idFlower = Input.getInt("Id Flower:");
+        String sql = ("DELETE FROM FlowerShop.Decoration  WHERE idDecoration = " + idFlower);
+
+       ;
+
 
     }
 
