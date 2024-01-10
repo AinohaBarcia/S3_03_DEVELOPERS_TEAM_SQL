@@ -5316,3 +5316,432 @@ java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supporte
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-01-09 22:33:37.623974Z jdbc[3]: exception
+java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
+	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1626)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:469)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-01-10 09:41:01.834080+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.839237+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.840465+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.840465+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.841474+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.841474+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.842471+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.842471+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.843813+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.843813+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.843813+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.844814+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.844814+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.845811+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.845811+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.846807+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.846807+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:41:01.846807+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.081538+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.088516+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.089511+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.090509+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.090509+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.091501+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.092495+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.093502+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.093502+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.094494+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.094494+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.094494+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.096488+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.097498+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.098492+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.099482+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.100471+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:43:46.101478+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.268927+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.272946+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.272946+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.273949+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.273949+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.273949+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.275034+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.275034+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.276263+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.276263+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.276263+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.277304+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.277304+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.277304+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.278695+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.278695+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.278695+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:52:34.278695+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.144940+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.160888+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.160888+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.161882+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.161882+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.162874+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.163872+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.163872+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.164872+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.164872+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.164872+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.165875+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.165875+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.166860+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.166860+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.166860+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.167859+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:00.167859+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.425020+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.429224+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.430221+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.430221+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.431217+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.431217+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.432644+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.432644+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.432644+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.433696+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.433696+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.433696+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.435511+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.436515+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.436515+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.437515+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.437515+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:54:15.437515+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 08:54:53.890175Z database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Jose Antonio/Dropbox/Sprint3/S3_03_DEVELOPERS_TEAM_SQL/src/Db/FlowerShop.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Jose Antonio/Dropbox/Sprint3/S3_03_DEVELOPERS_TEAM_SQL/src/Db/FlowerShop.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.intellij.database.remote.jdbc.helpers.JdbcHelperImpl.connect(JdbcHelperImpl.java:719)
+	at com.intellij.database.remote.jdbc.impl.RemoteDriverImpl.connect(RemoteDriverImpl.java:153)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Jose Antonio/Dropbox/Sprint3/S3_03_DEVELOPERS_TEAM_SQL/src/Db/FlowerShop.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Jose Antonio/Dropbox/Sprint3/S3_03_DEVELOPERS_TEAM_SQL/src/Db/FlowerShop.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 34 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Jose Antonio/Dropbox/Sprint3/S3_03_DEVELOPERS_TEAM_SQL/src/Db/FlowerShop.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 28 more
+2024-01-10 08:55:11.040939Z jdbc[3]: exception
+java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
+	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1626)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:469)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-01-10 09:55:22.675231+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.679797+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.680877+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.680877+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.680877+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.681875+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.682870+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.682870+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.683874+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.683874+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.683874+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.684870+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.685825+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.685825+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.686861+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.686861+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.687862+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:55:22.687862+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No hay datos disponibles.
+No data is available [2000-224]
+2024-01-10 09:56:55.228772+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El conjunto de resultados NO es scrollable y no puede ser reseteada. You may need to use conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ..).
+The result set is not scrollable and can not be reset. You may need to use conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ..). [90128-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcResultSet.resetResult(JdbcResultSet.java:3617)
+	at org.h2.jdbc.JdbcResultSet.beforeFirst(JdbcResultSet.java:3091)
+	at org.example.Methods.executeQueryAndProcessResult(Methods.java:97)
+	at org.example.Methods.printEntries(Methods.java:80)
+	at org.example.Methods.printStock(Methods.java:34)
+	at org.example.Main.main(Main.java:11)
