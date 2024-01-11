@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DdlMappings">
     <mapping uuid="b86bf1a3-c994-4462-a7aa-035334b67627" name="FlowerShop Mapping">
-      <data-sources db="9e7ccf46-bf86-47cb-9058-ab14b6fed661" ddl="5159bccb-a67a-43f1-afa0-4392c79e521c" />
+      <data-sources db="22343d5d-45bb-46c2-8c4f-8d0d50c722f9" ddl="9f60ce6d-0ddd-4c91-93bf-3bd4d2fa3063" />
       <scope>
         <node negative="1">
           <node kind="database" negative="1" />

@@ -2,6 +2,7 @@ package org.example;
 
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 
 public class Menu {
 
@@ -58,15 +59,15 @@ public class Menu {
                     break;
                 case 5:
                     System.out.println("Menu 5 - Remove a Tree item.");
-                    Methods.deleteProduct(con);
+                    Methods.deleteTree(con);
                     break;
                 case 6:
                     System.out.println("Menu 6 - Remove a Flower item.");
-                    Methods.deleteProduct(con);
+                    Methods.deleteFlower(con);
                     break;
                 case 7:
                     System.out.println("Menu 7 - Remove a Decoration item.");
-                    Methods.deleteProduct(con);
+                    Methods.deleteDecoration(con);
                     break;
                 case 8:
                     System.out.println("Menu 8 - Print stock with quantities.");
@@ -121,6 +122,37 @@ public class Menu {
         }while (!exit);
         System.out.println("Ticket:");
 
+    }
+
+    public static ResultSet  chooseMenuProduct(Connection con){
+        boolean exit = false;
+        do {
+            int menu = showMenuProduct();
+            switch (menu){
+                case 1:
+                    return Methods.searchProductTree(con);
+                case 2:
+                    return Methods.searchProductFlower(con);
+
+                case 3:
+                    return Methods.searchProductDecoration(con);
+
+                case 0:
+                    exit = true;
+                    break;
+            }
+        }while (!exit);
+       return null;
+    }
+
+    public static int showMenuProduct(){
+        int menuOption = Input.getInt("Select a type of product. \r\n"
+                + "1. Add tree on ticket. \r\n"
+                + "2. Add flower on ticket. \r\n"
+                + "3. Add decoration on ticket. \r\n"
+                + "0. Exit. \r\n"
+                + "Choose option:");
+        return menuOption;
     }
 
 
