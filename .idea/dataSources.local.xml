@@ -2,13 +2,16 @@
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-232.10227.8">
     <data-source name="FlowerShop" uuid="22343d5d-45bb-46c2-8c4f-8d0d50c722f9">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="H2" exact-version="0" />
+      <database-info product="H2" version="2.2.224 (2023-09-17)" jdbc-version="4.2" driver-name="H2 JDBC Driver" driver-version="2.2.224 (2023-09-17)" dbms="H2" exact-version="2.2.224" exact-driver-version="2.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>Admin</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="database" negative="1">
-            <node kind="schema" negative="1" />
+          <node kind="database" qname="FLOWERSHOP">
+            <node kind="schema" qname="FLOWERSHOP" />
           </node>
         </introspection-scope>
       </schema-mapping>
