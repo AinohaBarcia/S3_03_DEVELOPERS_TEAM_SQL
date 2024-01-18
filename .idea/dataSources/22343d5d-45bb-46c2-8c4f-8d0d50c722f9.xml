@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="FlowerShop">
-  <database-model serializer="dbm" dbms="H2" family-id="H2" format-version="4.49">
+  <database-model serializer="dbm" dbms="H2" family-id="H2" format-version="4.51">
     <root id="1">
       <ServerVersion>2.2.224</ServerVersion>
     </root>
@@ -167,84 +167,166 @@
     <collation id="160" parent="2" name="VIETNAMESE_VIETNAM"/>
     <role id="161" parent="2" name="PUBLIC"/>
     <schema id="162" parent="2" name="FLOWERSHOP">
-      <IntrospectionTimestamp>2024-01-10.18:29:44.390</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-01-10.17:29:44</LocalIntrospectionTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-01-18.01:27:20</LastIntrospectionLocalTimestamp>
     </schema>
     <schema id="163" parent="2" name="INFORMATION_SCHEMA">
-      <IntrospectionTimestamp>2024-01-10.18:28:47.361</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-01-10.17:28:47</LocalIntrospectionTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-01-10.17:28:47</LastIntrospectionLocalTimestamp>
     </schema>
     <schema id="164" parent="2" name="PUBLIC">
       <Current>1</Current>
+      <LastIntrospectionLocalTimestamp>2024-01-18.01:27:20</LastIntrospectionLocalTimestamp>
     </schema>
     <user id="165" parent="2" name="ADMIN">
       <Admin>1</Admin>
     </user>
-    <table id="166" parent="162" name="DECORATION"/>
-    <table id="167" parent="162" name="FLOWERS"/>
-    <table id="168" parent="162" name="FLOWERSHOP"/>
-    <table id="169" parent="162" name="TICKET"/>
-    <table id="170" parent="162" name="TREE"/>
-    <column id="171" parent="166" name="IDDECORATION">
-      <ColumnKind>generated-stored</ColumnKind>
-      <DasType>INTEGER|0s</DasType>
+    <sequence id="166" parent="162" name="PRODUCTIDGENERATOR_SEQ">
+      <DasType>BIGINT|0s</DasType>
+      <SequenceIdentity>1(3)</SequenceIdentity>
+      <StartValue>1</StartValue>
+    </sequence>
+    <table id="167" parent="162" name="DECORATION"/>
+    <table id="168" parent="162" name="FLOWERS"/>
+    <table id="169" parent="162" name="FLOWERSHOP"/>
+    <table id="170" parent="162" name="PRODUCTIDGENERATOR"/>
+    <table id="171" parent="162" name="TICKET"/>
+    <table id="172" parent="162" name="TICKETITEMS"/>
+    <table id="173" parent="162" name="TREE"/>
+    <column id="174" parent="167" name="NAME">
+      <DasType>CHARACTER VARYING(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceInline>1</SequenceInline>
-      <SequenceDasType>INTEGER|0s</SequenceDasType>
-      <SequenceSequenceIdentity>1(2)</SequenceSequenceIdentity>
-      <SequenceStartValue>1</SequenceStartValue>
     </column>
-    <column id="172" parent="166" name="NAME">
-      <DasType>CHARACTER VARYING(50)|0s</DasType>
+    <column id="175" parent="167" name="TYPE">
+      <DasType>CHARACTER VARYING(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="173" parent="166" name="TYPE">
-      <DasType>CHARACTER VARYING(255)|0s</DasType>
+    <column id="176" parent="167" name="PRICE">
+      <DasType>DOUBLE PRECISION|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="174" parent="166" name="PRICE">
-      <DasType>DOUBLE PRECISION|0s</DasType>
+    <column id="177" parent="167" name="FLOWERSHOP_IDFLOWERSHOP">
+      <DasType>INTEGER|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="175" parent="166" name="FLOWERSHOP_IDFLOWERSHOP">
+    <column id="178" parent="167" name="TICKET_IDTICKET">
       <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="176" parent="166" name="TICKET_IDTICKET">
+    <column id="179" parent="167" name="TICKET_FLOWERSHOP_IDFLOWERSHOP">
       <DasType>INTEGER|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="177" parent="166" name="TICKET_FLOWERSHOP_IDFLOWERSHOP">
+    <column id="180" parent="167" name="IDPRODUCT">
+      <ColumnKind>generated-stored</ColumnKind>
       <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>7</Position>
+      <SequenceInline>1</SequenceInline>
+      <SequenceDasType>INTEGER|0s</SequenceDasType>
+      <SequenceSequenceIdentity>1(1)</SequenceSequenceIdentity>
+      <SequenceStartValue>1</SequenceStartValue>
     </column>
-    <foreign-key id="178" parent="166" name="FK_DECORATION_FLOWERSHOP1">
+    <foreign-key id="181" parent="167" name="FK_DECORATION_FLOWERSHOP1">
       <ColNames>FLOWERSHOP_IDFLOWERSHOP</ColNames>
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
       <RefKeyName>CONSTRAINT_5</RefKeyName>
       <RefTableName>FLOWERSHOP</RefTableName>
     </foreign-key>
-    <index id="179" parent="166" name="PRIMARY_KEY_E">
-      <ColNames>IDDECORATION</ColNames>
+    <foreign-key id="182" parent="167" name="FK_DECORATION_PRODUCTIDGENERATOR">
+      <ColNames>IDPRODUCT</ColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+      <RefKeyName>CONSTRAINT_B</RefKeyName>
+      <RefTableName>PRODUCTIDGENERATOR</RefTableName>
+    </foreign-key>
+    <index id="183" parent="167" name="PRIMARY_KEY_E">
+      <ColNames>IDPRODUCT</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <index id="180" parent="166" name="FK_DECORATION_FLOWERSHOP1_INDEX_E">
+    <index id="184" parent="167" name="FK_DECORATION_FLOWERSHOP1_INDEX_E">
       <ColNames>FLOWERSHOP_IDFLOWERSHOP</ColNames>
       <NameSurrogate>1</NameSurrogate>
     </index>
-    <key id="181" parent="166" name="CONSTRAINT_E">
-      <ColNames>IDDECORATION</ColNames>
+    <key id="185" parent="167" name="CONSTRAINT_E">
+      <ColNames>IDPRODUCT</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="182" parent="167" name="IDFLOWERS">
+    <column id="186" parent="168" name="NAME">
+      <DasType>CHARACTER VARYING(50)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="187" parent="168" name="COLOR">
+      <DasType>CHARACTER VARYING(45)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="188" parent="168" name="PRICE">
+      <DasType>DOUBLE PRECISION|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="189" parent="168" name="FLOWERSHOP_IDFLOWERSHOP">
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="190" parent="168" name="TICKET_IDTICKET">
+      <DasType>INTEGER|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="191" parent="168" name="TICKET_FLOWERSHOP_IDFLOWERSHOP">
+      <DasType>INTEGER|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="192" parent="168" name="IDPRODUCT">
+      <ColumnKind>generated-stored</ColumnKind>
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <SequenceInline>1</SequenceInline>
+      <SequenceDasType>INTEGER|0s</SequenceDasType>
+      <SequenceSequenceIdentity>1(1)</SequenceSequenceIdentity>
+      <SequenceStartValue>1</SequenceStartValue>
+    </column>
+    <foreign-key id="193" parent="168" name="FK_FLOWERS_FLOWERSHOP1">
+      <ColNames>FLOWERSHOP_IDFLOWERSHOP</ColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+      <RefKeyName>CONSTRAINT_5</RefKeyName>
+      <RefTableName>FLOWERSHOP</RefTableName>
+    </foreign-key>
+    <foreign-key id="194" parent="168" name="FK_FLOWERS_PRODUCTIDGENERATOR">
+      <ColNames>IDPRODUCT</ColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+      <RefKeyName>CONSTRAINT_B</RefKeyName>
+      <RefTableName>PRODUCTIDGENERATOR</RefTableName>
+    </foreign-key>
+    <index id="195" parent="168" name="PRIMARY_KEY_2A">
+      <ColNames>IDPRODUCT</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <index id="196" parent="168" name="FK_FLOWERS_FLOWERSHOP1_INDEX_2">
+      <ColNames>FLOWERSHOP_IDFLOWERSHOP</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+    </index>
+    <key id="197" parent="168" name="CONSTRAINT_F">
+      <ColNames>IDPRODUCT</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="198" parent="168" name="UC_IDPRODUCT">
+      <ColNames>IDPRODUCT</ColNames>
+    </key>
+    <column id="199" parent="169" name="IDFLOWERSHOP">
       <ColumnKind>generated-stored</ColumnKind>
       <DasType>INTEGER|0s</DasType>
       <NotNull>1</NotNull>
@@ -254,85 +336,26 @@
       <SequenceSequenceIdentity>1(1)</SequenceSequenceIdentity>
       <SequenceStartValue>1</SequenceStartValue>
     </column>
-    <column id="183" parent="167" name="NAME">
-      <DasType>CHARACTER VARYING(50)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="184" parent="167" name="COLOR">
-      <DasType>CHARACTER VARYING(45)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="185" parent="167" name="PRICE">
-      <DasType>DOUBLE PRECISION|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="186" parent="167" name="FLOWERSHOP_IDFLOWERSHOP">
-      <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <column id="187" parent="167" name="TICKET_IDTICKET">
-      <DasType>INTEGER|0s</DasType>
-      <Position>6</Position>
-    </column>
-    <column id="188" parent="167" name="TICKET_FLOWERSHOP_IDFLOWERSHOP">
-      <DasType>INTEGER|0s</DasType>
-      <Position>7</Position>
-    </column>
-    <foreign-key id="189" parent="167" name="FK_FLOWERS_FLOWERSHOP1">
-      <ColNames>FLOWERSHOP_IDFLOWERSHOP</ColNames>
-      <OnDelete>restrict</OnDelete>
-      <OnUpdate>restrict</OnUpdate>
-      <RefKeyName>CONSTRAINT_5</RefKeyName>
-      <RefTableName>FLOWERSHOP</RefTableName>
-    </foreign-key>
-    <index id="190" parent="167" name="PRIMARY_KEY_F">
-      <ColNames>IDFLOWERS</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Unique>1</Unique>
-    </index>
-    <index id="191" parent="167" name="FK_FLOWERS_FLOWERSHOP1_INDEX_F">
-      <ColNames>FLOWERSHOP_IDFLOWERSHOP</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-    </index>
-    <key id="192" parent="167" name="CONSTRAINT_F">
-      <ColNames>IDFLOWERS</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <column id="193" parent="168" name="IDFLOWERSHOP">
-      <ColumnKind>generated-stored</ColumnKind>
-      <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <SequenceInline>1</SequenceInline>
-      <SequenceDasType>INTEGER|0s</SequenceDasType>
-      <SequenceSequenceIdentity>1(2)</SequenceSequenceIdentity>
-      <SequenceStartValue>1</SequenceStartValue>
-    </column>
-    <column id="194" parent="168" name="NAME">
+    <column id="200" parent="169" name="NAME">
       <DasType>CHARACTER VARYING(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="195" parent="168" name="TOTAL_STOCK">
+    <column id="201" parent="169" name="TOTAL_STOCK">
       <DasType>INTEGER|0s</DasType>
       <Position>3</Position>
     </column>
-    <index id="196" parent="168" name="PRIMARY_KEY_5">
+    <index id="202" parent="169" name="PRIMARY_KEY_5">
       <ColNames>IDFLOWERSHOP</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="197" parent="168" name="CONSTRAINT_5">
+    <key id="203" parent="169" name="CONSTRAINT_5">
       <ColNames>IDFLOWERSHOP</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="198" parent="169" name="IDTICKET">
+    <column id="204" parent="170" name="IDPRODUCT">
       <ColumnKind>generated-stored</ColumnKind>
       <DasType>INTEGER|0s</DasType>
       <NotNull>1</NotNull>
@@ -342,143 +365,194 @@
       <SequenceSequenceIdentity>1(1)</SequenceSequenceIdentity>
       <SequenceStartValue>1</SequenceStartValue>
     </column>
-    <column id="199" parent="169" name="ID_PRODUCT">
+    <index id="205" parent="170" name="PRIMARY_KEY_C">
+      <ColNames>IDPRODUCT</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <key id="206" parent="170" name="CONSTRAINT_B">
+      <ColNames>IDPRODUCT</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="207" parent="171" name="IDTICKET">
+      <ColumnKind>generated-stored</ColumnKind>
       <DasType>INTEGER|0s</DasType>
       <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceInline>1</SequenceInline>
+      <SequenceDasType>INTEGER|0s</SequenceDasType>
+      <SequenceSequenceIdentity>1(1)</SequenceSequenceIdentity>
+      <SequenceStartValue>1</SequenceStartValue>
+    </column>
+    <column id="208" parent="171" name="FLOWERSHOP_IDFLOWERSHOP">
+      <DasType>INTEGER|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="200" parent="169" name="PRODUCT_TYPE">
+    <column id="209" parent="171" name="DATE">
       <DasType>CHARACTER VARYING(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="201" parent="169" name="QUANTITY">
+    <foreign-key id="210" parent="171" name="FK_TICKET_FLOWERSHOP">
+      <ColNames>FLOWERSHOP_IDFLOWERSHOP</ColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+      <RefKeyName>CONSTRAINT_5</RefKeyName>
+      <RefTableName>FLOWERSHOP</RefTableName>
+    </foreign-key>
+    <index id="211" parent="171" name="PRIMARY_KEY_F1">
+      <ColNames>IDTICKET</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <index id="212" parent="171" name="FK_TICKET_FLOWERSHOP_INDEX_F">
+      <ColNames>FLOWERSHOP_IDFLOWERSHOP</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+    </index>
+    <key id="213" parent="171" name="CONSTRAINT_9">
+      <ColNames>IDTICKET</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="214" parent="172" name="IDTICKETITEM">
+      <ColumnKind>generated-stored</ColumnKind>
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceInline>1</SequenceInline>
+      <SequenceDasType>INTEGER|0s</SequenceDasType>
+      <SequenceSequenceIdentity>1(1)</SequenceSequenceIdentity>
+      <SequenceStartValue>1</SequenceStartValue>
+    </column>
+    <column id="215" parent="172" name="PRODUCT_TYPE">
+      <DasType>CHARACTER VARYING(45)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="216" parent="172" name="QUANTITY">
       <DasType>SMALLINT|0s</DasType>
-      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="217" parent="172" name="UNIT_PRICE">
+      <DasType>DOUBLE PRECISION|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="202" parent="169" name="UNIT_PRICE">
-      <DasType>DOUBLE PRECISION|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="218" parent="172" name="TOTAL_PURCHASE">
+      <DasType>INTEGER|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="203" parent="169" name="TOTAL_PURCHASE">
+    <column id="219" parent="172" name="TICKET_IDTICKET">
       <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="204" parent="169" name="FLOWERSHOP_IDFLOWERSHOP">
+    <column id="220" parent="172" name="FLOWERSHOP_IDFLOWERSHOP">
       <DasType>INTEGER|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="205" parent="169" name="DATE">
-      <DasType>CHARACTER VARYING(45)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="221" parent="172" name="ID_PRODUCT">
+      <DasType>INTEGER|0s</DasType>
       <Position>8</Position>
     </column>
-    <foreign-key id="206" parent="169" name="FK_ID_DECORATION">
-      <ColNames>ID_PRODUCT</ColNames>
+    <foreign-key id="222" parent="172" name="FK_TICKETITEM_TICKET">
+      <ColNames>TICKET_IDTICKET</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>restrict</OnUpdate>
-      <RefKeyName>CONSTRAINT_E</RefKeyName>
-      <RefTableName>DECORATION</RefTableName>
+      <RefKeyName>CONSTRAINT_9</RefKeyName>
+      <RefTableName>TICKET</RefTableName>
     </foreign-key>
-    <foreign-key id="207" parent="169" name="FK_ID_FLOWER">
-      <ColNames>ID_PRODUCT</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <OnUpdate>restrict</OnUpdate>
-      <RefKeyName>CONSTRAINT_F</RefKeyName>
-      <RefTableName>FLOWERS</RefTableName>
-    </foreign-key>
-    <foreign-key id="208" parent="169" name="FK_ID_TREE">
-      <ColNames>ID_PRODUCT</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <OnUpdate>restrict</OnUpdate>
-      <RefKeyName>CONSTRAINT_2</RefKeyName>
-      <RefTableName>TREE</RefTableName>
-    </foreign-key>
-    <foreign-key id="209" parent="169" name="FK_TICKET_FLOWERSHOP">
+    <foreign-key id="223" parent="172" name="FK_TICKETITEM_FLOWERSHOP">
       <ColNames>FLOWERSHOP_IDFLOWERSHOP</ColNames>
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
       <RefKeyName>CONSTRAINT_5</RefKeyName>
       <RefTableName>FLOWERSHOP</RefTableName>
     </foreign-key>
-    <index id="210" parent="169" name="PRIMARY_KEY_9">
-      <ColNames>IDTICKET</ColNames>
+    <foreign-key id="224" parent="172" name="FK_TICKETITEM_PRODUCT">
+      <ColNames>ID_PRODUCT</ColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+      <RefKeyName>CONSTRAINT_B</RefKeyName>
+      <RefTableName>PRODUCTIDGENERATOR</RefTableName>
+    </foreign-key>
+    <index id="225" parent="172" name="PRIMARY_KEY_A0">
+      <ColNames>IDTICKETITEM</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <index id="211" parent="169" name="FK_ID_FLOWER_INDEX_9">
-      <ColNames>ID_PRODUCT</ColNames>
+    <index id="226" parent="172" name="FK_TICKETITEM_TICKET_INDEX_A">
+      <ColNames>TICKET_IDTICKET</ColNames>
       <NameSurrogate>1</NameSurrogate>
     </index>
-    <index id="212" parent="169" name="FK_TICKET_FLOWERSHOP_INDEX_9">
+    <index id="227" parent="172" name="FK_TICKETITEM_FLOWERSHOP_INDEX_A">
       <ColNames>FLOWERSHOP_IDFLOWERSHOP</ColNames>
       <NameSurrogate>1</NameSurrogate>
     </index>
-    <key id="213" parent="169" name="CONSTRAINT_9">
-      <ColNames>IDTICKET</ColNames>
+    <index id="228" parent="172" name="FK_TICKETITEM_PRODUCT_INDEX_9">
+      <ColNames>ID_PRODUCT</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+    </index>
+    <key id="229" parent="172" name="CONSTRAINT_96">
+      <ColNames>IDTICKETITEM</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="214" parent="170" name="IDTREE">
-      <ColumnKind>generated-stored</ColumnKind>
-      <DasType>INTEGER|0s</DasType>
+    <column id="230" parent="173" name="NAME">
+      <DasType>CHARACTER VARYING(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceInline>1</SequenceInline>
-      <SequenceDasType>INTEGER|0s</SequenceDasType>
-      <SequenceSequenceIdentity>1(2)</SequenceSequenceIdentity>
-      <SequenceStartValue>1</SequenceStartValue>
     </column>
-    <column id="215" parent="170" name="NAME">
-      <DasType>CHARACTER VARYING(50)|0s</DasType>
+    <column id="231" parent="173" name="HEIGHT">
+      <DasType>SMALLINT|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="216" parent="170" name="HEIGHT">
-      <DasType>SMALLINT|0s</DasType>
+    <column id="232" parent="173" name="PRICE">
+      <DasType>DOUBLE PRECISION|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="217" parent="170" name="PRICE">
-      <DasType>DOUBLE PRECISION|0s</DasType>
+    <column id="233" parent="173" name="FLOWERSHOP_IDFLOWERSHOP">
+      <DasType>INTEGER|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="218" parent="170" name="FLOWERSHOP_IDFLOWERSHOP">
+    <column id="234" parent="173" name="TICKET_IDTICKET">
       <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="219" parent="170" name="TICKET_IDTICKET">
+    <column id="235" parent="173" name="TICKET_FLOWERSHOP_IDFLOWERSHOP">
       <DasType>INTEGER|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="220" parent="170" name="TICKET_FLOWERSHOP_IDFLOWERSHOP">
+    <column id="236" parent="173" name="IDPRODUCT">
+      <ColumnKind>generated-stored</ColumnKind>
       <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>7</Position>
+      <SequenceInline>1</SequenceInline>
+      <SequenceDasType>INTEGER|0s</SequenceDasType>
+      <SequenceSequenceIdentity>1(1)</SequenceSequenceIdentity>
+      <SequenceStartValue>1</SequenceStartValue>
     </column>
-    <foreign-key id="221" parent="170" name="FK_TREE_FLOWERSHOP1">
+    <foreign-key id="237" parent="173" name="FK_TREE_FLOWERSHOP1">
       <ColNames>FLOWERSHOP_IDFLOWERSHOP</ColNames>
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
       <RefKeyName>CONSTRAINT_5</RefKeyName>
       <RefTableName>FLOWERSHOP</RefTableName>
     </foreign-key>
-    <index id="222" parent="170" name="PRIMARY_KEY_2">
-      <ColNames>IDTREE</ColNames>
+    <index id="238" parent="173" name="PRIMARY_KEY_2">
+      <ColNames>IDPRODUCT</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <index id="223" parent="170" name="FK_TREE_FLOWERSHOP1_INDEX_2">
+    <index id="239" parent="173" name="FK_TREE_FLOWERSHOP1_INDEX_2">
       <ColNames>FLOWERSHOP_IDFLOWERSHOP</ColNames>
       <NameSurrogate>1</NameSurrogate>
     </index>
-    <key id="224" parent="170" name="CONSTRAINT_2">
-      <ColNames>IDTREE</ColNames>
+    <key id="240" parent="173" name="CONSTRAINT_2">
+      <ColNames>IDPRODUCT</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>

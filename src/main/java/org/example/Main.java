@@ -9,10 +9,7 @@ public class Main {
                 getConnection("jdbc:h2:./src/Db/FlowerShop", "Admin", "");
 
         Menu.choseMenu(con);
-        // add application code here
-        //Methods.createDecoration(con,Methods.searchFlowerShop(con));
-        //Methods.createNewFlowerShop(con);
-        //Methods.searchFlowerShop(con);
+
         con.close();
     }
 }

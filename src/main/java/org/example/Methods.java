@@ -12,10 +12,10 @@ public class Methods {
     }
 
     public static void createTree(Connection con, int idFlowerShop) {
-        String name = Input.getString("Name:");
+        String name = Input.getString("Tree name:");
         int height = Input.getInt("Height:");
         float price = Input.getFloat("Price:");
-        String sql = "INSERT INTO FLOWERSHOP.TREE(NAME, HEIGHT, PRICE, FLOWERSHOP_IDFLOWERSHOP) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO FLOWERSHOP.TREE (NAME, HEIGHT, PRICE, FLOWERSHOP_IDFLOWERSHOP) VALUES (?, ?, ?, ?)";
         updateWithParameters(con, sql, name, height, price, idFlowerShop);
     }
 
@@ -23,8 +23,15 @@ public class Methods {
         String flowerName = Input.getString("Flower name:");
         String color = Input.getString("Color:");
         float price = Input.getFloat("Price:");
-        String sql = "INSERT INTO FLOWERSHOP.FLOWERS(NAME, COLOR, PRICE, FLOWERSHOP_IDFLOWERSHOP) VALUES (?, ?, ?, ?)";
-        updateWithParameters(con, sql, flowerName, color, price, idFlowerShop);
+
+        int idProduct = idProductGenerator(con);
+
+        if (idProduct != -1) {
+            String sqlFlower = "INSERT INTO FLOWERSHOP.FLOWERS (NAME, COLOR, PRICE, FLOWERSHOP_IDFLOWERSHOP, IDPRODUCT) VALUES (?, ?, ?, ?, ?)";
+            updateWithParameters(con, sqlFlower, flowerName, color, price, idFlowerShop, idProduct);
+        } else {
+            System.out.println("Imposible to create a new id.");
+        }
     }
 
     public static void createDecoration(Connection con, int idFlowerShop) {
@@ -37,8 +44,14 @@ public class Methods {
 
         String name = Input.getString("Name:");
         float price = Input.getFloat("Price:");
-        String sql = "INSERT INTO FLOWERSHOP.DECORATION(NAME, TYPE, PRICE, FLOWERSHOP_IDFLOWERSHOP) VALUES (?, ?, ?, ?)";
-        updateWithParameters(con, sql, name, typeDecoration, price, idFlowerShop);
+
+        int idProduct = idProductGenerator(con);
+
+        if (idProduct != -1) {
+
+            String sql = "INSERT INTO FLOWERSHOP.DECORATION(NAME, TYPE, PRICE, FLOWERSHOP_IDFLOWERSHOP, IDPRODUCT) VALUES (?, ?, ?, ?, ?)";
+            updateWithParameters(con, sql, name, typeDecoration, price, idFlowerShop, idProduct);
+        }
     }
 
     public static void printStock(Connection con) {
@@ -79,29 +92,75 @@ public class Methods {
     }
 
     public static void stockTotalValue(Connection con) {
-
+        //TODO this method.
     }
-
-    public static void createTicketMethod(Connection con) {
+    public static void createTicketAndAddProducts(Connection con, int idFlowershop){
+        int idTicket = createTicketMethod(con,idFlowershop);
+        Menu.chooseMenuTicket(con,idTicket,idFlowershop);
+        printEntries(con, "TICKET");
+        System.out.println("Ticket with items:\n");
+        printTicket(con,idTicket);
+    }
+    public static int createTicketMethod(Connection con, int idFlowershop) {
         String date = Input.getString("Ticket date:");
-        String sql = "INSERT INTO FLOWERSHOP.TICKET(DATE,FLOWER) VALUES (?)";
-        updateWithParameter(con,sql,date);
+        String sql = "INSERT INTO FLOWERSHOP.TICKET(DATE, FLOWERSHOP_IDFLOWERSHOP) VALUES (?, ?)";
 
+        try (PreparedStatement statement = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
+            statement.setString(1, date);
+            statement.setInt(2, idFlowershop);
+
+            int rowsAffected = statement.executeUpdate();
+
+            if (rowsAffected == 1) {
+                try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        int generatedId = generatedKeys.getInt(1);
+                        System.out.println("Ticket creado con IDTICKET: " + generatedId);
+                        return generatedId;
+                    } else {
+                        System.err.println("Error al obtener el IDTICKET generado.");
+                        return -1;
+                    }
+                }
+            } else {
+                System.err.println("Error to insert the ticket.");
+                return -1;
+            }
+        } catch (SQLException e) {
+            System.out.println("imposible to create the ticket ");
+            return -1;
+        }
     }
 
+    public static void addProductTicket(Connection con, int idTicket, int idFlowerShop) {
+        printStock(con);
+        int idProduct = Input.getInt("Choose the number of the id product");
+        String type = TableType.getTableNameById(con, idProduct); // TODO: Controlar errores
+        int quantity = Input.getInt("Quantity:");
 
-    public static void addProductTicket(Connection con) {
-        ResultSet rs = null;
-        rs = Menu.chooseMenuProduct(con);
+        int generatedProductId = idProductGenerator(con);
 
+        if (generatedProductId != -1) {
+            float price = getProductPrice(con, generatedProductId, type);
+            float amountPrice = price * quantity;
+
+            String sql = "INSERT INTO FLOWERSHOP.TICKETITEMS(ID_PRODUCT, PRODUCT_TYPE, QUANTITY, UNIT_PRICE, TOTAL_PURCHASE, TICKET_IDTICKET, FLOWERSHOP_IDFLOWERSHOP) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            updateWithParameters(con, sql, generatedProductId, type, quantity, price, amountPrice, idTicket, idFlowerShop);
+
+            String deleteSql = "DELETE FROM FLOWERSHOP." + type + " WHERE IDPRODUCT = ?";
+            updateWithParameter(con, deleteSql, generatedProductId);
+        } else {
+            System.out.println("Error: Failed to generate a new ID for the product.");
+        }
     }
+ 
 
     public static void showOldPurchases(Connection con) {
-
+        //TODO this method.
     }
 
     public static void showTotalEarnings(Connection con) {
-
+        //TODO this method.
     }
 
     public static int searchFlowerShop(Connection con){
@@ -109,39 +168,6 @@ public class Methods {
         return Input.getInt("Id Flower Shop:");
     }
 
-    public static ResultSet  searchProductTree(Connection con) {
-        printEntries(con, "tree");
-        int id = Input.getInt("Id product:");
-        String sql = "SELECT * FROM FLOWERSHOP.TREE WHERE IDTREE =" +id;
-        return query(con, sql);
-    }
-
-    public static ResultSet  searchProductFlower(Connection con) {
-        printEntries(con, "flower");
-        int id = Input.getInt("Id product:");
-        String sql = "SELECT * FROM FLOWERSHOP.FLOWERS WHERE IDFLOWERS =" +id;
-        return query(con, sql);
-    }
-
-    public static ResultSet  searchProductDecoration(Connection con) {
-        printEntries(con, "decoration");
-        int id = Input.getInt("Id product:");
-        String sql = "SELECT * FROM FLOWERSHOP.DECORATION WHERE IDDECORATION =" +id;
-        return query(con, sql);
-    }
-
-    public static ResultSet query(Connection con, String sql) {
-        ResultSet rs = null;
-        try {
-            PreparedStatement ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-        } catch (SQLException ex) {
-            System.err.println("SQL Error: " + ex.getMessage());
-        } catch (Exception ex) {
-            System.err.println("Error: " + ex);
-        }
-        return rs;
-    }
 
     private static void updateWithParameter(Connection con, String sql, Object parameter) {
         try (PreparedStatement ps = con.prepareStatement(sql)) {
@@ -217,6 +243,97 @@ public class Methods {
             System.err.println("Error: " + ex);
         }
         return count;
+    }
+    public static float getProductPrice(Connection connection, int idProducto, String type) {
+        float price = 0.0F;
+
+        try {
+            String sql = "SELECT PRICE FROM FLOWERSHOP."+type+" WHERE IDPRODUCT = ?";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setInt(1, idProducto);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    if (resultSet.next()) {
+                        price = resultSet.getFloat("PRICE");
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return price;
+    }
+    public static int idProductGenerator(Connection con) {
+        try {
+            String sql = "CALL NEXT VALUE FOR FLOWERSHOP.PRODUCTIDGENERATOR_SEQ";
+            try (PreparedStatement preparedStatement = con.prepareStatement(sql)) {
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        int nextId = resultSet.getInt(1);
+                        if (!isProductIdExisting(con, nextId)) {
+                            String insertSql = "INSERT INTO FLOWERSHOP.PRODUCTIDGENERATOR (IDPRODUCT) VALUES (?)";
+                            updateWithParameter(con, insertSql, nextId);
+                            return nextId;
+                        } else {
+                            System.out.println("Error: ID " + nextId + " already exists in PRODUCTIDGENERATOR table.");
+                            return -1;
+                        }
+                    } else {
+                        System.out.println("Error: No se pudo obtener el próximo valor de la secuencia.");
+                        return -1;
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+
+    private static boolean isProductIdExisting(Connection con, int productId) {
+        String query = "SELECT 1 FROM FLOWERSHOP.PRODUCTIDGENERATOR WHERE IDPRODUCT = ?";
+        try (PreparedStatement preparedStatement = con.prepareStatement(query)) {
+            preparedStatement.setInt(1, productId);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                return resultSet.next();
+            }
+        } catch (SQLException e) {
+            System.out.println("This product, already exist.");;
+            return false;  // Manejar cualquier error de SQL
+        }
+    }
+
+    public static void printTicket(Connection con, int idTicket) {
+        String sql = "SELECT * FROM FLOWERSHOP.TICKET WHERE IDTICKET = ?";
+        try (PreparedStatement statement = con.prepareStatement(sql)) {
+            statement.setInt(1, idTicket);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    System.out.println("Ticket Information:");
+                    System.out.println("IDTICKET: " + resultSet.getInt("IDTICKET"));
+                    System.out.println("Date: " + resultSet.getString("DATE"));
+                    System.out.println("FLOWERSHOP_IDFLOWERSHOP: " + resultSet.getInt("FLOWERSHOP_IDFLOWERSHOP"));
+                    System.out.println("\nProducts in the Ticket:");
+
+                    String ticketItemsSql = "SELECT * FROM FLOWERSHOP.TICKETITEMS WHERE TICKET_IDTICKET = ?";
+                    try (PreparedStatement ticketItemsStatement = con.prepareStatement(ticketItemsSql)) {
+                        ticketItemsStatement.setInt(1, idTicket);
+                        try (ResultSet ticketItemsResultSet = ticketItemsStatement.executeQuery()) {
+                            while (ticketItemsResultSet.next()) {
+                                System.out.println("\nProduct ID: " + ticketItemsResultSet.getInt("ID_PRODUCT"));
+                                System.out.println("Product Type: " + ticketItemsResultSet.getString("PRODUCT_TYPE"));
+                                System.out.println("Quantity: " + ticketItemsResultSet.getInt("QUANTITY"));
+                                System.out.println("Unit Price: " + ticketItemsResultSet.getFloat("UNIT_PRICE"));
+                                System.out.println("Total Purchase: " + ticketItemsResultSet.getFloat("TOTAL_PURCHASE"));
+                            }
+                        }
+                    }
+                } else {
+                    System.out.println("Ticket with ID " + idTicket + " not found.");
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Another error, What do you think?");;
+        }
     }
 
 }
